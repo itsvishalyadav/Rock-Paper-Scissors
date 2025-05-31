@@ -1,88 +1,77 @@
 let humanScore = 0
 let compScore = 0
 
-  document.getElementById("yscr").textContent = humanScore;
-  document.getElementById("cscr").textContent = compScore;
+document.getElementById('scr1').textContent = humanScore
+document.getElementById('scr2').textContent = compScore
+document.getElementById('res').textContent = "Let's Play"
 
-function getComputerChoice() {
+function computerChoice() {
   const num = Math.random()
-  let choice
   if (num <= 0.33) {
-    choice = 'Rock'
+    return 'rock'
+  } else if (num > 0.33 && num <= 0.66) {
+    return 'paper'
+  } else {
+    return 'scissor'
   }
-  if (num <= 0.66 && num > 0.33) {
-    choice = 'paper'
-  }
-  if (num > 0.66) {
-    choice = 'scissors'
-  }
+}
 
-  return choice.toLowerCase()
+function getWinner(humanScore, compScore) {
+  if (humanScore > compScore) {
+    alert('YOU WON!!')
+  } else if (humanScore < compScore) {
+    alert('Winner is Computer')
+  } else {
+    alert('Match TIED!!')
+  }
 }
 
 function playRound(human, computer) {
-  let act="";
-  console.log('You chose ' + human)
-  console.log('Computer chose ' + computer)
-  act+='You chose ' + human+'<br>Computer chose ' + computer
+  let result = ''
+  console.log('You Chose ' + human)
+  console.log('Computer Chose ' + computer)
+  result += 'You chose ' + human + '<br>Computer chose ' + computer
 
   if (
     (human == 'rock' && computer == 'paper') ||
-    (human == 'paper' && computer == 'scissors') ||
-    (human == 'scissors' && computer == 'rock')
+    (human == 'paper' && computer == 'scissor') ||
+    (human == 'scissor' && computer == 'rock')
   ) {
     compScore++
     console.log('You lose, Computer WON!!')
-    act+='<br><br>You lose, Computer WON!!'
+    result += '<br><br>You lose, Computer WON!!'
   } else if (
     (computer == 'rock' && human == 'paper') ||
-    (computer == 'paper' && human == 'scissors') ||
-    (computer == 'scissors' && human == 'rock')
+    (computer == 'paper' && human == 'scissor') ||
+    (computer == 'scissor' && human == 'rock')
   ) {
     humanScore++
     console.log('You WON!!')
-    act+='<br><br>You WON!!'
+    result += '<br><br>You WON!!'
   } else if (
     (computer == 'rock' && human == 'rock') ||
     (computer == 'paper' && human == 'paper') ||
-    (computer == 'scissors' && human == 'scissors')
+    (computer == 'scissor' && human == 'scissor')
   ) {
     console.log('Round tie!!')
-    act+='<br><br>Round tie!!'
+    result += '<br><br>Round tie!!'
   }
-  document.getElementById("yscr").textContent = humanScore;
-  document.getElementById("cscr").textContent = compScore;
-  document.getElementById("actions").innerHTML = act;
+  document.getElementById('scr1').textContent = humanScore
+  document.getElementById('scr2').textContent = compScore
+  document.getElementById('res').innerHTML = result
   console.log('Your Score: ' + humanScore + ' Computer Score: ' + compScore)
-}
-
-function getWinner() {
-  let winner = ''
-  if (humanScore > compScore) {
-    alert('Winner is YOU')
-  } else if (humanScore < compScore) {
-    alert('Winner is COMPUTER' + winner)
+  if (humanScore === 5 || compScore === 5) {
+    getWinner(humanScore, compScore)
   }
 }
 
-function playGameOf5() {
-  let clicks = 0
-  if (clicks >= 5) {
-    return getWinner()
-  } else {
-    const buttons = document.querySelectorAll('button')
+const butns = document.querySelectorAll('button')
 
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const playerChoice = button.id
-        const computerChoice = getComputerChoice()
+butns.forEach((button) => {
+  button.addEventListener('click', () => {
+    const human = button.id
+    const computer = computerChoice()
 
-        playRound(playerChoice, computerChoice)
-        clicks++
-        console.log(clicks)
-      })
-    })
-  }
-}
-
-playGameOf5()
+    playRound(human, computer)
+  })
+})

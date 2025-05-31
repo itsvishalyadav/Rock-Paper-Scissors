@@ -4,31 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <nav>
-      <div id="header">VISHAL YADAV</div>
-      <div><a href="">About</a></div>
+    <nav class="navigation">
+      <div id="mainLogo">
+        <img id="logo" src="./images/rock-paper-scissors.png" alt="" />
+        <p id="logotxt">R.P.S.</p>
+      </div>
+      <a href="./aboutPage.html">About Us</a>
     </nav>
-    <div id="btn">
-      <button class="buttons" id="rock">Rock</button>
-      <button class="buttons" id="paper">Paper</button>
-      <button class="buttons" id="scissors">Scissors</button>
-    </div>
-    <div class="score">
-      <div id="yourscr">
-        <div>Your Score</div>
-        <p id="yscr"></p>
-      </div>
-      <div id="actions">
 
+    <div class="btns">
+      <div class="optns">
+        <button id="rock">
+          <img class="buttons" src="./images/rock.png" alt="Rock" />
+        </button>
+        <p>Rock</p>
       </div>
-      <div id="compscr">
-        <div>Computer Score</div>
-        <p id="cscr"></p>
+      <div class="optns">
+        <button id="paper">
+          <img class="buttons" src="./images/paper.png" alt="Paper" />
+        </button>
+        <p>Paper</p>
       </div>
+      <div class="optns">
+        <button id="scissor">
+          <img class="buttons" src="./images/scissor.png" alt="Scissor" />
+        </button>
+        <p>Scissor</p>
+      </div>
+    </div>
+
+    <div id="scoreBoard">
+      <div id="scrs">
+        <div id="yourscr">
+          <div>Your Score:</div>
+          <p id="scr1"></p>
+        </div>
+        <div id="compscr">
+          <div>Computer Score:</div>
+          <p id="scr2"></p>
+        </div>
+      </div>
+      <div id="res"></div>
     </div>
   </body>
 </html>

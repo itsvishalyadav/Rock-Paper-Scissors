@@ -56,13 +56,16 @@ git clone https://github.com/yourusername/rock-paper-scissors.git
 
 ### 2. Navigate into the directory
 
+```bash
 cd rock-paper-scissors
+
+```
 
 ### 3. Open the game
 
 Double-click index.html or open it with Live Server in VS Code.
 
-### 💻 Technologies Used
+## 💻 Technologies Used
 
     HTML5
 
@@ -70,7 +73,7 @@ Double-click index.html or open it with Live Server in VS Code.
 
     JavaScript (Vanilla)
 
-### 💡 Ideas for Improvement
+## 💡 Ideas for Improvement
 
     Add a restart button to reset the game
 
@@ -82,7 +85,7 @@ Double-click index.html or open it with Live Server in VS Code.
 
     Improve mobile responsiveness
 
-### 📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 Feel free to use and modify it as you like.

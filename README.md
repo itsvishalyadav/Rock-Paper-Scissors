@@ -33,13 +33,15 @@ A fun and simple **Rock Paper Scissors** game built using HTML, CSS, and JavaScr
 
 ## 🗂️ Project Structure
 
-rock-paper-scissors/
+Rock-Paper-Scissors/
 │
 ├── index.html # Main HTML file
 ├── style.css # CSS styling for the game
 ├── script.js # JavaScript logic
-├── assets/ # Images (icons, background, etc.)
+├── images/ # Images (icons, background, etc.)
 └── README.md # Project documentation
+└── aboutPage.html # About Page HTML file
+└── aboutPage.css # About page style
 
 ---
 
@@ -50,14 +52,14 @@ To run this project locally:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/rock-paper-scissors.git
+git clone https://github.com/itsvishalyadav/Rock-Paper-Scissors.git
 
 ```
 
 ### 2. Navigate into the directory
 
 ```bash
-cd rock-paper-scissors
+cd Rock-Paper-Scissors
 
 ```
 
